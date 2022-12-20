@@ -33,7 +33,7 @@ const ReservedFiles = () => {
                     </td>
                 </tr>)
               }
-              
+               
             </tbody>
 
           </table>
