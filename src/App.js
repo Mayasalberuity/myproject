@@ -16,6 +16,7 @@ import { testService } from './services/test.service';
 import { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import ReservedFiles from './components/ReservedFiles';
 
 
 
@@ -52,6 +53,7 @@ function App() {
         {/* <Route path='/deletegroup' element={<DeleteGroup />}></Route> */}
         <Route path='/showmember' element={<ShowMember />}></Route>
         <Route path='/filehistory' element={<Filehistory />}></Route>
+        <Route path='/reserved-files' element={<ReservedFiles />}></Route>
 
       </Routes>
       <ToastContainer />

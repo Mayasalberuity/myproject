@@ -1,4 +1,6 @@
+import { ThirtyFpsSelectRounded } from "@mui/icons-material";
 import ApiService from "../components/utils/base-api/api-service";
+import fileDownload from 'js-file-download'
 
 
 class FilesService extends ApiService {
@@ -8,8 +10,21 @@ class FilesService extends ApiService {
     });
   }
 
-  getFilesHistory() {
-    return this.post("/api/getFileHistory");
+  getFilesHistory(body) {
+    return this.post("/api/getFileHistory", body);
+  }
+
+  getReservedFiles() {
+    return this.get("/api/getReservedFile");
+  }
+
+  handleDownload = (url, filename) => {
+    ThirtyFpsSelectRounded.get(url, {
+      responseType: 'blob',
+    })
+    .then((res) => {
+      fileDownload(res.data, filename)
+    })
   }
 
   
